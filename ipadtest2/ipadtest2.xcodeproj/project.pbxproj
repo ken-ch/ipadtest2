@@ -1,0 +1,712 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF60A1DA20CA09F60056EE66 /* NotificationSender.m in Sources */ = {isa = PBXBuildFile; fileRef = CF60A1D920CA09F60056EE66 /* NotificationSender.m */; };
+		CF60A1DD20CA0BC00056EE66 /* NSNotificationListener.m in Sources */ = {isa = PBXBuildFile; fileRef = CF60A1DC20CA0BC00056EE66 /* NSNotificationListener.m */; };
+		CF60A1E020CA25D80056EE66 /* connectbluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = CF60A1DF20CA25D80056EE66 /* connectbluetooth.m */; };
+		CF71C56220C4D8B300A0C7E8 /* bluetoothViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71C56120C4D8B300A0C7E8 /* bluetoothViewController.m */; };
+		CF71C56520C4D98200A0C7E8 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF71C56420C4D98200A0C7E8 /* CoreBluetooth.framework */; };
+		CF71C56920C5305400A0C7E8 /* bluetoothCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71C56820C5305400A0C7E8 /* bluetoothCell.m */; };
+		CF71C57120C53B7300A0C7E8 /* TableViewAnimationKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71C56C20C53B7300A0C7E8 /* TableViewAnimationKit.m */; };
+		CF71C57220C53B7300A0C7E8 /* UITableView+XSAnimationKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71C57020C53B7300A0C7E8 /* UITableView+XSAnimationKit.m */; };
+		CFABA2F320D8C4D0000FC871 /* VHAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2B520D8C4CF000FC871 /* VHAnimationManager.m */; };
+		CFABA2F420D8C4D0000FC871 /* VHEase.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2B820D8C4CF000FC871 /* VHEase.m */; };
+		CFABA2F520D8C4D0000FC871 /* VHBoomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2BD20D8C4CF000FC871 /* VHBoomButton.m */; };
+		CFABA2F620D8C4D0000FC871 /* VHBoomButtonBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2C020D8C4CF000FC871 /* VHBoomButtonBuilder.m */; };
+		CFABA2F720D8C4D0000FC871 /* VHBoomButtonWithText.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2C420D8C4CF000FC871 /* VHBoomButtonWithText.m */; };
+		CFABA2F820D8C4D0000FC871 /* VHBoomButtonWithTextBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2C620D8C4CF000FC871 /* VHBoomButtonWithTextBuilder.m */; };
+		CFABA2F920D8C4D0000FC871 /* VHButtonPlaceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2CA20D8C4CF000FC871 /* VHButtonPlaceManager.m */; };
+		CFABA2FA20D8C4D0000FC871 /* VHHamButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2CC20D8C4CF000FC871 /* VHHamButton.m */; };
+		CFABA2FB20D8C4D0000FC871 /* VHHamButtonBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2CE20D8C4CF000FC871 /* VHHamButtonBuilder.m */; };
+		CFABA2FC20D8C4D0000FC871 /* VHSimpleCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2D020D8C4CF000FC871 /* VHSimpleCircleButton.m */; };
+		CFABA2FD20D8C4D0000FC871 /* VHSimpleCircleButtonBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2D220D8C4CF000FC871 /* VHSimpleCircleButtonBuilder.m */; };
+		CFABA2FE20D8C4D0000FC871 /* VHTextInsideCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2D420D8C4CF000FC871 /* VHTextInsideCircleButton.m */; };
+		CFABA2FF20D8C4D0000FC871 /* VHTextInsideCircleButtonBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2D620D8C4CF000FC871 /* VHTextInsideCircleButtonBuilder.m */; };
+		CFABA30020D8C4D0000FC871 /* VHTextOutsideCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2D820D8C4CF000FC871 /* VHTextOutsideCircleButton.m */; };
+		CFABA30120D8C4D0000FC871 /* VHTextOutsideCircleButtonBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2DA20D8C4CF000FC871 /* VHTextOutsideCircleButtonBuilder.m */; };
+		CFABA30220D8C4D0000FC871 /* VHBoomPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2DE20D8C4CF000FC871 /* VHBoomPiece.m */; };
+		CFABA30320D8C4D0000FC871 /* VHPiecePlaceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2E120D8C4CF000FC871 /* VHPiecePlaceManager.m */; };
+		CFABA30420D8C4D0000FC871 /* VHBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2E420D8C4CF000FC871 /* VHBackgroundView.m */; };
+		CFABA30520D8C4D0000FC871 /* VHBoomMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2E720D8C4CF000FC871 /* VHBoomMenuButton.m */; };
+		CFABA30620D8C4D0000FC871 /* VHErrorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2EC20D8C4CF000FC871 /* VHErrorManager.m */; };
+		CFABA30720D8C4D0000FC871 /* VHShareLinesLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2EE20D8C4CF000FC871 /* VHShareLinesLayer.m */; };
+		CFABA30820D8C4D0000FC871 /* VHShareLinesView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2F020D8C4CF000FC871 /* VHShareLinesView.m */; };
+		CFABA30920D8C4D0000FC871 /* VHUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA2F220D8C4CF000FC871 /* VHUtils.m */; };
+		CFABA30C20D8C7B1000FC871 /* BuilderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFABA30A20D8C7B1000FC871 /* BuilderManager.m */; };
+		CFB35CCD20BF94AB00F45B13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB35CCC20BF94AB00F45B13 /* AppDelegate.m */; };
+		CFB35CD020BF94AB00F45B13 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB35CCF20BF94AB00F45B13 /* ViewController.m */; };
+		CFB35CD320BF94AB00F45B13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFB35CD120BF94AB00F45B13 /* Main.storyboard */; };
+		CFB35CD620BF94AB00F45B13 /* ipadtest2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CFB35CD420BF94AB00F45B13 /* ipadtest2.xcdatamodeld */; };
+		CFB35CD820BF94AC00F45B13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFB35CD720BF94AC00F45B13 /* Assets.xcassets */; };
+		CFB35CDB20BF94AC00F45B13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFB35CD920BF94AC00F45B13 /* LaunchScreen.storyboard */; };
+		CFB35CDE20BF94AC00F45B13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB35CDD20BF94AC00F45B13 /* main.m */; };
+		CFB35CE720BFABF000F45B13 /* optionals.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFB35CE620BFABF000F45B13 /* optionals.plist */; };
+		CFB35CEA20BFAC4200F45B13 /* optionals.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB35CE920BFAC4200F45B13 /* optionals.m */; };
+		CFB35CED20C00F7500F45B13 /* optionalsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB35CEC20C00F7500F45B13 /* optionalsCell.m */; };
+		CFC76B0C20C7CA1200193577 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC76B0A20C7CA1100193577 /* MBProgressHUD.m */; };
+		CFD38AFA20E2276E00A686BC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD38AF920E2276E00A686BC /* AVFoundation.framework */; };
+		CFD38AFC20E229DB00A686BC /* 401_1291369504.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CFD38AFB20E229DB00A686BC /* 401_1291369504.mp3 */; };
+		CFD38B0220E25DB900A686BC /* leftview.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD38B0120E25DB900A686BC /* leftview.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CF3E18C520D378F500A39C86 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		CF3E18C620D3790900A39C86 /* blue.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = blue.pch; sourceTree = "<group>"; };
+		CF60A1D820CA09F60056EE66 /* NotificationSender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationSender.h; sourceTree = "<group>"; };
+		CF60A1D920CA09F60056EE66 /* NotificationSender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationSender.m; sourceTree = "<group>"; };
+		CF60A1DB20CA0BC00056EE66 /* NSNotificationListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSNotificationListener.h; sourceTree = "<group>"; };
+		CF60A1DC20CA0BC00056EE66 /* NSNotificationListener.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSNotificationListener.m; sourceTree = "<group>"; };
+		CF60A1DE20CA25D80056EE66 /* connectbluetooth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = connectbluetooth.h; sourceTree = "<group>"; };
+		CF60A1DF20CA25D80056EE66 /* connectbluetooth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = connectbluetooth.m; sourceTree = "<group>"; };
+		CF71C56020C4D8B300A0C7E8 /* bluetoothViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bluetoothViewController.h; sourceTree = "<group>"; };
+		CF71C56120C4D8B300A0C7E8 /* bluetoothViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bluetoothViewController.m; sourceTree = "<group>"; };
+		CF71C56420C4D98200A0C7E8 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		CF71C56620C524FB00A0C7E8 /* ipadtest2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ipadtest2.entitlements; sourceTree = "<group>"; };
+		CF71C56720C5305400A0C7E8 /* bluetoothCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bluetoothCell.h; sourceTree = "<group>"; };
+		CF71C56820C5305400A0C7E8 /* bluetoothCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bluetoothCell.m; sourceTree = "<group>"; };
+		CF71C56B20C53B7300A0C7E8 /* TableViewAnimationKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewAnimationKit.h; sourceTree = "<group>"; };
+		CF71C56C20C53B7300A0C7E8 /* TableViewAnimationKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewAnimationKit.m; sourceTree = "<group>"; };
+		CF71C56D20C53B7300A0C7E8 /* TableViewAnimationKitConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewAnimationKitConfig.h; sourceTree = "<group>"; };
+		CF71C56E20C53B7300A0C7E8 /* TableViewAnimationKitHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewAnimationKitHeaders.h; sourceTree = "<group>"; };
+		CF71C56F20C53B7300A0C7E8 /* UITableView+XSAnimationKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+XSAnimationKit.h"; sourceTree = "<group>"; };
+		CF71C57020C53B7300A0C7E8 /* UITableView+XSAnimationKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+XSAnimationKit.m"; sourceTree = "<group>"; };
+		CFABA2B420D8C4CF000FC871 /* VHAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHAnimationManager.h; sourceTree = "<group>"; };
+		CFABA2B520D8C4CF000FC871 /* VHAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHAnimationManager.m; sourceTree = "<group>"; };
+		CFABA2B620D8C4CF000FC871 /* VHBoomEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHBoomEnum.h; sourceTree = "<group>"; };
+		CFABA2B720D8C4CF000FC871 /* VHEase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHEase.h; sourceTree = "<group>"; };
+		CFABA2B820D8C4CF000FC871 /* VHEase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHEase.m; sourceTree = "<group>"; };
+		CFABA2B920D8C4CF000FC871 /* VHOrderEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHOrderEnum.h; sourceTree = "<group>"; };
+		CFABA2BA20D8C4CF000FC871 /* VHTimeInterpolator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHTimeInterpolator.h; sourceTree = "<group>"; };
+		CFABA2BC20D8C4CF000FC871 /* VHBoomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHBoomButton.h; sourceTree = "<group>"; };
+		CFABA2BD20D8C4CF000FC871 /* VHBoomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHBoomButton.m; sourceTree = "<group>"; };
+		CFABA2BE20D8C4CF000FC871 /* VHBoomButton_protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHBoomButton_protected.h; sourceTree = "<group>"; };
+		CFABA2BF20D8C4CF000FC871 /* VHBoomButtonBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHBoomButtonBuilder.h; sourceTree = "<group>"; };
+		CFABA2C020D8C4CF000FC871 /* VHBoomButtonBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHBoomButtonBuilder.m; sourceTree = "<group>"; };
+		CFABA2C120D8C4CF000FC871 /* VHBoomButtonBuilder_protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHBoomButtonBuilder_protected.h; sourceTree = "<group>"; };
+		CFABA2C220D8C4CF000FC871 /* VHBoomButtonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHBoomButtonDelegate.h; sourceTree = "<group>"; };
+		CFABA2C320D8C4CF000FC871 /* VHBoomButtonWithText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHBoomButtonWithText.h; sourceTree = "<group>"; };
+		CFABA2C420D8C4CF000FC871 /* VHBoomButtonWithText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHBoomButtonWithText.m; sourceTree = "<group>"; };
+		CFABA2C520D8C4CF000FC871 /* VHBoomButtonWithTextBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHBoomButtonWithTextBuilder.h; sourceTree = "<group>"; };
+		CFABA2C620D8C4CF000FC871 /* VHBoomButtonWithTextBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHBoomButtonWithTextBuilder.m; sourceTree = "<group>"; };
+		CFABA2C720D8C4CF000FC871 /* VHButtonPlaceAlignmentEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHButtonPlaceAlignmentEnum.h; sourceTree = "<group>"; };
+		CFABA2C820D8C4CF000FC871 /* VHButtonPlaceEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHButtonPlaceEnum.h; sourceTree = "<group>"; };
+		CFABA2C920D8C4CF000FC871 /* VHButtonPlaceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHButtonPlaceManager.h; sourceTree = "<group>"; };
+		CFABA2CA20D8C4CF000FC871 /* VHButtonPlaceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHButtonPlaceManager.m; sourceTree = "<group>"; };
+		CFABA2CB20D8C4CF000FC871 /* VHHamButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHHamButton.h; sourceTree = "<group>"; };
+		CFABA2CC20D8C4CF000FC871 /* VHHamButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHHamButton.m; sourceTree = "<group>"; };
+		CFABA2CD20D8C4CF000FC871 /* VHHamButtonBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHHamButtonBuilder.h; sourceTree = "<group>"; };
+		CFABA2CE20D8C4CF000FC871 /* VHHamButtonBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHHamButtonBuilder.m; sourceTree = "<group>"; };
+		CFABA2CF20D8C4CF000FC871 /* VHSimpleCircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHSimpleCircleButton.h; sourceTree = "<group>"; };
+		CFABA2D020D8C4CF000FC871 /* VHSimpleCircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHSimpleCircleButton.m; sourceTree = "<group>"; };
+		CFABA2D120D8C4CF000FC871 /* VHSimpleCircleButtonBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHSimpleCircleButtonBuilder.h; sourceTree = "<group>"; };
+		CFABA2D220D8C4CF000FC871 /* VHSimpleCircleButtonBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHSimpleCircleButtonBuilder.m; sourceTree = "<group>"; };
+		CFABA2D320D8C4CF000FC871 /* VHTextInsideCircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHTextInsideCircleButton.h; sourceTree = "<group>"; };
+		CFABA2D420D8C4CF000FC871 /* VHTextInsideCircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHTextInsideCircleButton.m; sourceTree = "<group>"; };
+		CFABA2D520D8C4CF000FC871 /* VHTextInsideCircleButtonBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHTextInsideCircleButtonBuilder.h; sourceTree = "<group>"; };
+		CFABA2D620D8C4CF000FC871 /* VHTextInsideCircleButtonBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHTextInsideCircleButtonBuilder.m; sourceTree = "<group>"; };
+		CFABA2D720D8C4CF000FC871 /* VHTextOutsideCircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHTextOutsideCircleButton.h; sourceTree = "<group>"; };
+		CFABA2D820D8C4CF000FC871 /* VHTextOutsideCircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHTextOutsideCircleButton.m; sourceTree = "<group>"; };
+		CFABA2D920D8C4CF000FC871 /* VHTextOutsideCircleButtonBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHTextOutsideCircleButtonBuilder.h; sourceTree = "<group>"; };
+		CFABA2DA20D8C4CF000FC871 /* VHTextOutsideCircleButtonBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHTextOutsideCircleButtonBuilder.m; sourceTree = "<group>"; };
+		CFABA2DB20D8C4CF000FC871 /* BoomMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoomMenuButton.h; sourceTree = "<group>"; };
+		CFABA2DD20D8C4CF000FC871 /* VHBoomPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHBoomPiece.h; sourceTree = "<group>"; };
+		CFABA2DE20D8C4CF000FC871 /* VHBoomPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHBoomPiece.m; sourceTree = "<group>"; };
+		CFABA2DF20D8C4CF000FC871 /* VHPiecePlaceEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHPiecePlaceEnum.h; sourceTree = "<group>"; };
+		CFABA2E020D8C4CF000FC871 /* VHPiecePlaceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHPiecePlaceManager.h; sourceTree = "<group>"; };
+		CFABA2E120D8C4CF000FC871 /* VHPiecePlaceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHPiecePlaceManager.m; sourceTree = "<group>"; };
+		CFABA2E220D8C4CF000FC871 /* VHBackgroundDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHBackgroundDelegate.h; sourceTree = "<group>"; };
+		CFABA2E320D8C4CF000FC871 /* VHBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHBackgroundView.h; sourceTree = "<group>"; };
+		CFABA2E420D8C4CF000FC871 /* VHBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHBackgroundView.m; sourceTree = "<group>"; };
+		CFABA2E520D8C4CF000FC871 /* VHBoomDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHBoomDelegate.h; sourceTree = "<group>"; };
+		CFABA2E620D8C4CF000FC871 /* VHBoomMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHBoomMenuButton.h; sourceTree = "<group>"; };
+		CFABA2E720D8C4CF000FC871 /* VHBoomMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHBoomMenuButton.m; sourceTree = "<group>"; };
+		CFABA2E820D8C4CF000FC871 /* VHBoomStateEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHBoomStateEnum.h; sourceTree = "<group>"; };
+		CFABA2E920D8C4CF000FC871 /* VHButtonEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHButtonEnum.h; sourceTree = "<group>"; };
+		CFABA2EA20D8C4CF000FC871 /* VHButtonStateEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHButtonStateEnum.h; sourceTree = "<group>"; };
+		CFABA2EB20D8C4CF000FC871 /* VHErrorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHErrorManager.h; sourceTree = "<group>"; };
+		CFABA2EC20D8C4CF000FC871 /* VHErrorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHErrorManager.m; sourceTree = "<group>"; };
+		CFABA2ED20D8C4CF000FC871 /* VHShareLinesLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHShareLinesLayer.h; sourceTree = "<group>"; };
+		CFABA2EE20D8C4CF000FC871 /* VHShareLinesLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHShareLinesLayer.m; sourceTree = "<group>"; };
+		CFABA2EF20D8C4CF000FC871 /* VHShareLinesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHShareLinesView.h; sourceTree = "<group>"; };
+		CFABA2F020D8C4CF000FC871 /* VHShareLinesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHShareLinesView.m; sourceTree = "<group>"; };
+		CFABA2F120D8C4CF000FC871 /* VHUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHUtils.h; sourceTree = "<group>"; };
+		CFABA2F220D8C4CF000FC871 /* VHUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHUtils.m; sourceTree = "<group>"; };
+		CFABA30A20D8C7B1000FC871 /* BuilderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuilderManager.m; sourceTree = "<group>"; };
+		CFABA30B20D8C7B1000FC871 /* BuilderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuilderManager.h; sourceTree = "<group>"; };
+		CFB35CC820BF94AA00F45B13 /* ipadtest2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ipadtest2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFB35CCB20BF94AA00F45B13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CFB35CCC20BF94AB00F45B13 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CFB35CCE20BF94AB00F45B13 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CFB35CCF20BF94AB00F45B13 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CFB35CD220BF94AB00F45B13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CFB35CD520BF94AB00F45B13 /* ipadtest2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ipadtest2.xcdatamodel; sourceTree = "<group>"; };
+		CFB35CD720BF94AC00F45B13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CFB35CDA20BF94AC00F45B13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CFB35CDC20BF94AC00F45B13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFB35CDD20BF94AC00F45B13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CFB35CE620BFABF000F45B13 /* optionals.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = optionals.plist; sourceTree = "<group>"; };
+		CFB35CE820BFAC4200F45B13 /* optionals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = optionals.h; sourceTree = "<group>"; };
+		CFB35CE920BFAC4200F45B13 /* optionals.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = optionals.m; sourceTree = "<group>"; };
+		CFB35CEB20C00F7500F45B13 /* optionalsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = optionalsCell.h; sourceTree = "<group>"; };
+		CFB35CEC20C00F7500F45B13 /* optionalsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = optionalsCell.m; sourceTree = "<group>"; };
+		CFC76B0A20C7CA1100193577 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		CFC76B0B20C7CA1200193577 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		CFD38AF920E2276E00A686BC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CFD38AFB20E229DB00A686BC /* 401_1291369504.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 401_1291369504.mp3; sourceTree = "<group>"; };
+		CFD38B0020E25DB900A686BC /* leftview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = leftview.h; sourceTree = "<group>"; };
+		CFD38B0120E25DB900A686BC /* leftview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = leftview.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CFB35CC520BF94AA00F45B13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFD38AFA20E2276E00A686BC /* AVFoundation.framework in Frameworks */,
+				CF71C56520C4D98200A0C7E8 /* CoreBluetooth.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF60A1D120CA09400056EE66 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				CFB35CE820BFAC4200F45B13 /* optionals.h */,
+				CFB35CE920BFAC4200F45B13 /* optionals.m */,
+				CF60A1D820CA09F60056EE66 /* NotificationSender.h */,
+				CF60A1D920CA09F60056EE66 /* NotificationSender.m */,
+				CF60A1DB20CA0BC00056EE66 /* NSNotificationListener.h */,
+				CF60A1DC20CA0BC00056EE66 /* NSNotificationListener.m */,
+				CF3E18C520D378F500A39C86 /* Common.h */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		CF60A1D320CA095D0056EE66 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				CFB35CD120BF94AB00F45B13 /* Main.storyboard */,
+				CFB35CEB20C00F7500F45B13 /* optionalsCell.h */,
+				CFB35CEC20C00F7500F45B13 /* optionalsCell.m */,
+				CF71C56720C5305400A0C7E8 /* bluetoothCell.h */,
+				CF71C56820C5305400A0C7E8 /* bluetoothCell.m */,
+				CF60A1DE20CA25D80056EE66 /* connectbluetooth.h */,
+				CF60A1DF20CA25D80056EE66 /* connectbluetooth.m */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		CF60A1D420CA099A0056EE66 /* mbprogress */ = {
+			isa = PBXGroup;
+			children = (
+				CFC76B0B20C7CA1200193577 /* MBProgressHUD.h */,
+				CFC76B0A20C7CA1100193577 /* MBProgressHUD.m */,
+			);
+			path = mbprogress;
+			sourceTree = "<group>";
+		};
+		CF60A1D720CA09BE0056EE66 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFABA30B20D8C7B1000FC871 /* BuilderManager.h */,
+				CFABA30A20D8C7B1000FC871 /* BuilderManager.m */,
+				CFB35CCB20BF94AA00F45B13 /* AppDelegate.h */,
+				CFB35CCC20BF94AB00F45B13 /* AppDelegate.m */,
+				CF71C56020C4D8B300A0C7E8 /* bluetoothViewController.h */,
+				CF71C56120C4D8B300A0C7E8 /* bluetoothViewController.m */,
+				CFB35CCE20BF94AB00F45B13 /* ViewController.h */,
+				CFB35CCF20BF94AB00F45B13 /* ViewController.m */,
+				CFD38B0020E25DB900A686BC /* leftview.h */,
+				CFD38B0120E25DB900A686BC /* leftview.m */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		CF71C56320C4D98100A0C7E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFD38AF920E2276E00A686BC /* AVFoundation.framework */,
+				CF71C56420C4D98200A0C7E8 /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF71C56A20C53B7300A0C7E8 /* TableViewAnimationKit */ = {
+			isa = PBXGroup;
+			children = (
+				CF71C56B20C53B7300A0C7E8 /* TableViewAnimationKit.h */,
+				CF71C56C20C53B7300A0C7E8 /* TableViewAnimationKit.m */,
+				CF71C56D20C53B7300A0C7E8 /* TableViewAnimationKitConfig.h */,
+				CF71C56E20C53B7300A0C7E8 /* TableViewAnimationKitHeaders.h */,
+				CF71C56F20C53B7300A0C7E8 /* UITableView+XSAnimationKit.h */,
+				CF71C57020C53B7300A0C7E8 /* UITableView+XSAnimationKit.m */,
+			);
+			path = TableViewAnimationKit;
+			sourceTree = "<group>";
+		};
+		CFABA2B220D8C4CF000FC871 /* BoomMenuButton */ = {
+			isa = PBXGroup;
+			children = (
+				CFABA2B320D8C4CF000FC871 /* Animation */,
+				CFABA2BB20D8C4CF000FC871 /* BoomButton */,
+				CFABA2DB20D8C4CF000FC871 /* BoomMenuButton.h */,
+				CFABA2DC20D8C4CF000FC871 /* Piece */,
+				CFABA2E220D8C4CF000FC871 /* VHBackgroundDelegate.h */,
+				CFABA2E320D8C4CF000FC871 /* VHBackgroundView.h */,
+				CFABA2E420D8C4CF000FC871 /* VHBackgroundView.m */,
+				CFABA2E520D8C4CF000FC871 /* VHBoomDelegate.h */,
+				CFABA2E620D8C4CF000FC871 /* VHBoomMenuButton.h */,
+				CFABA2E720D8C4CF000FC871 /* VHBoomMenuButton.m */,
+				CFABA2E820D8C4CF000FC871 /* VHBoomStateEnum.h */,
+				CFABA2E920D8C4CF000FC871 /* VHButtonEnum.h */,
+				CFABA2EA20D8C4CF000FC871 /* VHButtonStateEnum.h */,
+				CFABA2EB20D8C4CF000FC871 /* VHErrorManager.h */,
+				CFABA2EC20D8C4CF000FC871 /* VHErrorManager.m */,
+				CFABA2ED20D8C4CF000FC871 /* VHShareLinesLayer.h */,
+				CFABA2EE20D8C4CF000FC871 /* VHShareLinesLayer.m */,
+				CFABA2EF20D8C4CF000FC871 /* VHShareLinesView.h */,
+				CFABA2F020D8C4CF000FC871 /* VHShareLinesView.m */,
+				CFABA2F120D8C4CF000FC871 /* VHUtils.h */,
+				CFABA2F220D8C4CF000FC871 /* VHUtils.m */,
+			);
+			path = BoomMenuButton;
+			sourceTree = "<group>";
+		};
+		CFABA2B320D8C4CF000FC871 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				CFABA2B420D8C4CF000FC871 /* VHAnimationManager.h */,
+				CFABA2B520D8C4CF000FC871 /* VHAnimationManager.m */,
+				CFABA2B620D8C4CF000FC871 /* VHBoomEnum.h */,
+				CFABA2B720D8C4CF000FC871 /* VHEase.h */,
+				CFABA2B820D8C4CF000FC871 /* VHEase.m */,
+				CFABA2B920D8C4CF000FC871 /* VHOrderEnum.h */,
+				CFABA2BA20D8C4CF000FC871 /* VHTimeInterpolator.h */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		CFABA2BB20D8C4CF000FC871 /* BoomButton */ = {
+			isa = PBXGroup;
+			children = (
+				CFABA2BC20D8C4CF000FC871 /* VHBoomButton.h */,
+				CFABA2BD20D8C4CF000FC871 /* VHBoomButton.m */,
+				CFABA2BE20D8C4CF000FC871 /* VHBoomButton_protected.h */,
+				CFABA2BF20D8C4CF000FC871 /* VHBoomButtonBuilder.h */,
+				CFABA2C020D8C4CF000FC871 /* VHBoomButtonBuilder.m */,
+				CFABA2C120D8C4CF000FC871 /* VHBoomButtonBuilder_protected.h */,
+				CFABA2C220D8C4CF000FC871 /* VHBoomButtonDelegate.h */,
+				CFABA2C320D8C4CF000FC871 /* VHBoomButtonWithText.h */,
+				CFABA2C420D8C4CF000FC871 /* VHBoomButtonWithText.m */,
+				CFABA2C520D8C4CF000FC871 /* VHBoomButtonWithTextBuilder.h */,
+				CFABA2C620D8C4CF000FC871 /* VHBoomButtonWithTextBuilder.m */,
+				CFABA2C720D8C4CF000FC871 /* VHButtonPlaceAlignmentEnum.h */,
+				CFABA2C820D8C4CF000FC871 /* VHButtonPlaceEnum.h */,
+				CFABA2C920D8C4CF000FC871 /* VHButtonPlaceManager.h */,
+				CFABA2CA20D8C4CF000FC871 /* VHButtonPlaceManager.m */,
+				CFABA2CB20D8C4CF000FC871 /* VHHamButton.h */,
+				CFABA2CC20D8C4CF000FC871 /* VHHamButton.m */,
+				CFABA2CD20D8C4CF000FC871 /* VHHamButtonBuilder.h */,
+				CFABA2CE20D8C4CF000FC871 /* VHHamButtonBuilder.m */,
+				CFABA2CF20D8C4CF000FC871 /* VHSimpleCircleButton.h */,
+				CFABA2D020D8C4CF000FC871 /* VHSimpleCircleButton.m */,
+				CFABA2D120D8C4CF000FC871 /* VHSimpleCircleButtonBuilder.h */,
+				CFABA2D220D8C4CF000FC871 /* VHSimpleCircleButtonBuilder.m */,
+				CFABA2D320D8C4CF000FC871 /* VHTextInsideCircleButton.h */,
+				CFABA2D420D8C4CF000FC871 /* VHTextInsideCircleButton.m */,
+				CFABA2D520D8C4CF000FC871 /* VHTextInsideCircleButtonBuilder.h */,
+				CFABA2D620D8C4CF000FC871 /* VHTextInsideCircleButtonBuilder.m */,
+				CFABA2D720D8C4CF000FC871 /* VHTextOutsideCircleButton.h */,
+				CFABA2D820D8C4CF000FC871 /* VHTextOutsideCircleButton.m */,
+				CFABA2D920D8C4CF000FC871 /* VHTextOutsideCircleButtonBuilder.h */,
+				CFABA2DA20D8C4CF000FC871 /* VHTextOutsideCircleButtonBuilder.m */,
+			);
+			path = BoomButton;
+			sourceTree = "<group>";
+		};
+		CFABA2DC20D8C4CF000FC871 /* Piece */ = {
+			isa = PBXGroup;
+			children = (
+				CFABA2DD20D8C4CF000FC871 /* VHBoomPiece.h */,
+				CFABA2DE20D8C4CF000FC871 /* VHBoomPiece.m */,
+				CFABA2DF20D8C4CF000FC871 /* VHPiecePlaceEnum.h */,
+				CFABA2E020D8C4CF000FC871 /* VHPiecePlaceManager.h */,
+				CFABA2E120D8C4CF000FC871 /* VHPiecePlaceManager.m */,
+			);
+			path = Piece;
+			sourceTree = "<group>";
+		};
+		CFB35CBF20BF94AA00F45B13 = {
+			isa = PBXGroup;
+			children = (
+				CFB35CCA20BF94AA00F45B13 /* ipadtest2 */,
+				CFB35CC920BF94AA00F45B13 /* Products */,
+				CF71C56320C4D98100A0C7E8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CFB35CC920BF94AA00F45B13 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFB35CC820BF94AA00F45B13 /* ipadtest2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CFB35CCA20BF94AA00F45B13 /* ipadtest2 */ = {
+			isa = PBXGroup;
+			children = (
+				CF71C56620C524FB00A0C7E8 /* ipadtest2.entitlements */,
+				CF60A1D720CA09BE0056EE66 /* controllers */,
+				CF60A1D120CA09400056EE66 /* models */,
+				CF60A1D320CA095D0056EE66 /* views */,
+				CFB35CE620BFABF000F45B13 /* optionals.plist */,
+				CF3E18C620D3790900A39C86 /* blue.pch */,
+				CFB35CD720BF94AC00F45B13 /* Assets.xcassets */,
+				CFD38AFB20E229DB00A686BC /* 401_1291369504.mp3 */,
+				CFB35CD920BF94AC00F45B13 /* LaunchScreen.storyboard */,
+				CFB35CDC20BF94AC00F45B13 /* Info.plist */,
+				CFB35CDD20BF94AC00F45B13 /* main.m */,
+				CFB35CD420BF94AB00F45B13 /* ipadtest2.xcdatamodeld */,
+				CFABA2B220D8C4CF000FC871 /* BoomMenuButton */,
+				CF60A1D420CA099A0056EE66 /* mbprogress */,
+				CF71C56A20C53B7300A0C7E8 /* TableViewAnimationKit */,
+			);
+			path = ipadtest2;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CFB35CC720BF94AA00F45B13 /* ipadtest2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFB35CE120BF94AC00F45B13 /* Build configuration list for PBXNativeTarget "ipadtest2" */;
+			buildPhases = (
+				CFB35CC420BF94AA00F45B13 /* Sources */,
+				CFB35CC520BF94AA00F45B13 /* Frameworks */,
+				CFB35CC620BF94AA00F45B13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ipadtest2;
+			productName = ipadtest2;
+			productReference = CFB35CC820BF94AA00F45B13 /* ipadtest2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CFB35CC020BF94AA00F45B13 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = kench;
+				TargetAttributes = {
+					CFB35CC720BF94AA00F45B13 = {
+						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = CFB35CC320BF94AA00F45B13 /* Build configuration list for PBXProject "ipadtest2" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CFB35CBF20BF94AA00F45B13;
+			productRefGroup = CFB35CC920BF94AA00F45B13 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CFB35CC720BF94AA00F45B13 /* ipadtest2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CFB35CC620BF94AA00F45B13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFB35CDB20BF94AC00F45B13 /* LaunchScreen.storyboard in Resources */,
+				CFD38AFC20E229DB00A686BC /* 401_1291369504.mp3 in Resources */,
+				CFB35CD820BF94AC00F45B13 /* Assets.xcassets in Resources */,
+				CFB35CE720BFABF000F45B13 /* optionals.plist in Resources */,
+				CFB35CD320BF94AB00F45B13 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CFB35CC420BF94AA00F45B13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF71C56920C5305400A0C7E8 /* bluetoothCell.m in Sources */,
+				CFABA30320D8C4D0000FC871 /* VHPiecePlaceManager.m in Sources */,
+				CF60A1E020CA25D80056EE66 /* connectbluetooth.m in Sources */,
+				CFABA2F520D8C4D0000FC871 /* VHBoomButton.m in Sources */,
+				CFABA2F820D8C4D0000FC871 /* VHBoomButtonWithTextBuilder.m in Sources */,
+				CFABA2F320D8C4D0000FC871 /* VHAnimationManager.m in Sources */,
+				CFABA30420D8C4D0000FC871 /* VHBackgroundView.m in Sources */,
+				CF60A1DD20CA0BC00056EE66 /* NSNotificationListener.m in Sources */,
+				CF71C57120C53B7300A0C7E8 /* TableViewAnimationKit.m in Sources */,
+				CFABA2FC20D8C4D0000FC871 /* VHSimpleCircleButton.m in Sources */,
+				CFABA2FD20D8C4D0000FC871 /* VHSimpleCircleButtonBuilder.m in Sources */,
+				CFABA2F920D8C4D0000FC871 /* VHButtonPlaceManager.m in Sources */,
+				CFABA2FA20D8C4D0000FC871 /* VHHamButton.m in Sources */,
+				CFABA2FB20D8C4D0000FC871 /* VHHamButtonBuilder.m in Sources */,
+				CFABA30620D8C4D0000FC871 /* VHErrorManager.m in Sources */,
+				CFABA2F620D8C4D0000FC871 /* VHBoomButtonBuilder.m in Sources */,
+				CF71C56220C4D8B300A0C7E8 /* bluetoothViewController.m in Sources */,
+				CFABA30720D8C4D0000FC871 /* VHShareLinesLayer.m in Sources */,
+				CFB35CD620BF94AB00F45B13 /* ipadtest2.xcdatamodeld in Sources */,
+				CFABA30C20D8C7B1000FC871 /* BuilderManager.m in Sources */,
+				CFC76B0C20C7CA1200193577 /* MBProgressHUD.m in Sources */,
+				CFABA30820D8C4D0000FC871 /* VHShareLinesView.m in Sources */,
+				CFB35CD020BF94AB00F45B13 /* ViewController.m in Sources */,
+				CFB35CDE20BF94AC00F45B13 /* main.m in Sources */,
+				CFD38B0220E25DB900A686BC /* leftview.m in Sources */,
+				CFABA30520D8C4D0000FC871 /* VHBoomMenuButton.m in Sources */,
+				CF60A1DA20CA09F60056EE66 /* NotificationSender.m in Sources */,
+				CFB35CED20C00F7500F45B13 /* optionalsCell.m in Sources */,
+				CFABA30020D8C4D0000FC871 /* VHTextOutsideCircleButton.m in Sources */,
+				CFABA2FE20D8C4D0000FC871 /* VHTextInsideCircleButton.m in Sources */,
+				CFABA2F720D8C4D0000FC871 /* VHBoomButtonWithText.m in Sources */,
+				CFABA30220D8C4D0000FC871 /* VHBoomPiece.m in Sources */,
+				CFB35CCD20BF94AB00F45B13 /* AppDelegate.m in Sources */,
+				CFABA30120D8C4D0000FC871 /* VHTextOutsideCircleButtonBuilder.m in Sources */,
+				CF71C57220C53B7300A0C7E8 /* UITableView+XSAnimationKit.m in Sources */,
+				CFB35CEA20BFAC4200F45B13 /* optionals.m in Sources */,
+				CFABA2F420D8C4D0000FC871 /* VHEase.m in Sources */,
+				CFABA2FF20D8C4D0000FC871 /* VHTextInsideCircleButtonBuilder.m in Sources */,
+				CFABA30920D8C4D0000FC871 /* VHUtils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CFB35CD120BF94AB00F45B13 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFB35CD220BF94AB00F45B13 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CFB35CD920BF94AC00F45B13 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFB35CDA20BF94AC00F45B13 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CFB35CDF20BF94AC00F45B13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CFB35CE020BF94AC00F45B13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CFB35CE220BF94AC00F45B13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RAYTD93Y2X;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ipadtest2/blue.pch";
+				INFOPLIST_FILE = ipadtest2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.zwu.ipadtest2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		CFB35CE320BF94AC00F45B13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RAYTD93Y2X;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ipadtest2/blue.pch";
+				INFOPLIST_FILE = ipadtest2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.zwu.ipadtest2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFB35CC320BF94AA00F45B13 /* Build configuration list for PBXProject "ipadtest2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFB35CDF20BF94AC00F45B13 /* Debug */,
+				CFB35CE020BF94AC00F45B13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFB35CE120BF94AC00F45B13 /* Build configuration list for PBXNativeTarget "ipadtest2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFB35CE220BF94AC00F45B13 /* Debug */,
+				CFB35CE320BF94AC00F45B13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CFB35CD420BF94AB00F45B13 /* ipadtest2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CFB35CD520BF94AB00F45B13 /* ipadtest2.xcdatamodel */,
+			);
+			currentVersion = CFB35CD520BF94AB00F45B13 /* ipadtest2.xcdatamodel */;
+			path = ipadtest2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CFB35CC020BF94AA00F45B13 /* Project object */;
+}
