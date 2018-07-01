@@ -29,13 +29,13 @@
 
 #import <AVFoundation/AVFoundation.h> //播放音乐
 
-
+#import "MBProgressHUD.h"//加载信息的缓冲
 
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource, UIScrollViewDelegate, UIGestureRecognizerDelegate,CBCentralManagerDelegate,CBPeripheralDelegate,VHBoomDelegate>
 
 @property(nonatomic,strong)UIView *optionview;//候选区的view
-@property(nonatomic,strong)UIScrollView *optionscrollview;//候选区的scroll
+//@property(nonatomic,strong)UIScrollView *optionscrollview;//候选区的scroll
 
 @property(nonatomic,strong)NSMutableArray *mainarray;//存储数据的数组
 
@@ -83,6 +83,7 @@
 @property(nonatomic,strong)UITableView *collectiontable;//用来显示收藏的程序
 @property(nonatomic,strong)UIButton *collectioncancel;//用来关闭弹出的view
 
+@property(nonatomic,strong)MBProgressHUD *blueprogress;//加载的缓冲
 
 @property(nonatomic,assign)CGPoint startpoint;//用来记录控件的初始位置（startbtn用）
 @property(nonatomic,assign)CGPoint stoppoint;//用来记录控件的初始位置（end用）
@@ -326,16 +327,13 @@
     
     [self setbackgroundview];//设置背景的view
     
-  
-    
-    
 }
 
 
 #pragma mark 设置背景的view==============
 -(void)setbackgroundview{
     UIImageView *mainbgimgview = [[UIImageView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    mainbgimgview.image = [UIImage imageNamed:@"guoda"];
+    //mainbgimgview.image = [UIImage imageNamed:@"guoda"];
     [self.view addSubview:mainbgimgview];
     [self.view sendSubviewToBack:mainbgimgview];
     
@@ -818,7 +816,9 @@
     [self.view sendSubviewToBack:rightview];
 }
 
-#pragma mark 连接到外围蓝牙设备的弹框
+
+
+#pragma mark 连接到外围蓝牙设备的弹框==============
 -(void)textclick{
 
     if (!self.myPeripheral) {
@@ -874,12 +874,28 @@
         [bgmainview addSubview:linkblue];
         linkblue.layer.cornerRadius = btnW*0.5;
         [linkblue addTarget:self action:@selector(searchbluetooth) forControlEvents:UIControlEventTouchUpInside];
+        
+        
+           [self progressload];//加载动画
 
     }
     
     
 }
 
+
+#pragma mark 加载中，请稍后==============
+-(void)progressload{
+    NSLog(@"progressload");
+    self.blueprogress = [[MBProgressHUD alloc]initWithView:self.bluetable];
+    self.blueprogress.mode = MBProgressHUDModeIndeterminate;
+    self.blueprogress.label.text = @"加载中，请稍后~~~";
+    self.blueprogress.progress = 1;
+    [self.view addSubview:self.blueprogress];
+    
+}
+
+#pragma mark 取消搜索的按钮方法==========
 -(void)cancelaction{
     [self.bgview removeFromSuperview];
     
@@ -888,6 +904,7 @@
     
 }
 
+#pragma mark 搜索蓝牙的按钮方法==========
 -(void)searchbluetooth{
  
     //创建中心设备管理器并设置当前控制器视图为代理
@@ -895,6 +912,8 @@
     
     self.bluearray = nil;
 
+    [self.blueprogress showAnimated:YES];//蓝牙的加载动画
+    
 }
 
 
@@ -1507,7 +1526,7 @@
         if (kCBAdvDataIsConnectable == 0) {
             [self alert:@"连接错误" andmessage:@"抱歉，此蓝牙暂不可连接"];
         }else{
-            //[self.blueprogress showAnimated:YES];//在进行连接的时候显示动画 第二段动画开始
+            [self.blueprogress showAnimated:YES];//在进行连接的时候显示动画 第二段动画开始
             
             [self.bluetoothManager connectPeripheral: [self.bluearray objectAtIndex:indexPath.row] options:nil];
         
@@ -1722,7 +1741,26 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
 }
 
+-(void)jumpto:(NSString *)jumpurl{
+    
+    NSURL *url1 = [NSURL URLWithString:jumpurl];
+    // iOS10也可以使用url2访问，不过使用url1更好一些，可具体根据业务需求自行选择
+    NSURL *url2 = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+    if (@available(iOS 11.0, *)) {
+        if ([[UIApplication sharedApplication] canOpenURL:url2]){
+            [[UIApplication sharedApplication] openURL:url2 options:@{} completionHandler:nil];
+        }
+    } else {
+        if ([[UIApplication sharedApplication] canOpenURL:url1]){
+            if (@available(iOS 10.0, *)) {
+                [[UIApplication sharedApplication] openURL:url1 options:@{} completionHandler:nil];
+            } else {
+                [[UIApplication sharedApplication] openURL:url1];
+            }
+        }
+    }
 
+}
 #pragma mark bluetoothManager的第一个代理方法  用来检测蓝牙是否开启 ================
 //中心服务器状态更新后
 -(void)centralManagerDidUpdateState:(CBCentralManager *)central{
@@ -1737,7 +1775,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             
         default:
             NSLog(@"此设备不支持BLE或未打开蓝牙功能，无法作为外围设备.");
-            //  [self jumpto:UIApplicationOpenSettingsURLString];
+              [self jumpto:UIApplicationOpenSettingsURLString];
             break;
     }
 }
@@ -1780,7 +1818,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     [self.bluetoothManager stopScan];
     
    // self.bluetv.hidden = NO;
-    NSLog(@"bluearray = %@",self.bluearray);
+    //NSLog(@"bluearray = %@",self.bluearray);
     
     [self.bluetable reloadData];//重新载入数据
     
@@ -1788,6 +1826,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     
     [self starAnimationWithTableView:self.bluetable];//给tableview的生成加一个动画
     
+    [self.blueprogress hideAnimated:YES];
     
 }
 
@@ -1865,6 +1904,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     self.bluearray = nil;
     self.adarray = nil;
     
+    [self.blueprogress hideAnimated:YES];//关闭第二段动画
     
     if (error) {
         NSLog(@"更新通知状态时发生错误，错误信息：%@",error.localizedDescription);
