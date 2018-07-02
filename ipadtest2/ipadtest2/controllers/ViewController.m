@@ -15,7 +15,7 @@
 
 
 
-#import "TableViewAnimationKitHeaders.h"
+#import "TableViewAnimationKitHeaders.h"//tableview的动画
 
 #import "VHBoomMenuButton.h"//悬浮按钮
 #import "BuilderManager.h"
@@ -24,15 +24,15 @@
 #import "NSNotificationListener.h"//通知的监听者
 #import "NotificationSender.h"//通知的发布者
 
-#import <CoreBluetooth/CoreBluetooth.h>//蓝牙模块
-#import "bluetoothCell.h"
+#import <CoreBluetooth/CoreBluetooth.h>//蓝牙模块manager的代理
+#import "bluetoothCell.h"//蓝牙的tableviewcell
 
 #import <AVFoundation/AVFoundation.h> //播放音乐
 
 #import "MBProgressHUD.h"//加载信息的缓冲
 
 
-@interface ViewController ()<UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource, UIScrollViewDelegate, UIGestureRecognizerDelegate,CBCentralManagerDelegate,CBPeripheralDelegate,VHBoomDelegate>
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource, UIGestureRecognizerDelegate,CBCentralManagerDelegate,CBPeripheralDelegate,VHBoomDelegate>
 
 @property(nonatomic,strong)UIView *optionview;//候选区的view
 //@property(nonatomic,strong)UIScrollView *optionscrollview;//候选区的scroll
@@ -48,7 +48,7 @@
 @property(nonatomic,strong)UIButton *lightoff;
 @property(nonatomic,strong)UIButton *optiondelay;
 @property(nonatomic,strong)UIButton *loopstart;
-@property(nonatomic,strong)UIButton *loopend;
+@property(nonatomic,strong)UIButton *loopend;//几个按钮
 
 
 @property(nonatomic,strong)NSMutableArray *delnamearray; //删除命令行的时候的一个判断要用的全局可变数组
@@ -60,10 +60,10 @@
 
 @property(nonatomic,strong)UIButton *additionalclear;//程序信息的清除按钮（先放着）
 
-@property(nonatomic,strong)NSArray *pickerds;//pickerview
-@property(nonatomic,strong)UIPickerView *picker;
+@property(nonatomic,strong)NSArray *pickerds;//pickerview的数据库
+@property(nonatomic,strong)UIPickerView *picker;//alertview的选择器
 @property(nonatomic,strong)NSString *pickerstr;
-@property(nonatomic,strong)UILabel *cellclicklbl;
+//@property(nonatomic,strong)UILabel *cellclicklbl;
 
 @property(nonatomic,strong)UITextView *rightinfotextview;//ß用来显示每个按钮的介绍
 @property(nonatomic,strong)UILabel *righttoplabel;//用来显示蓝牙的链接状态
@@ -90,8 +90,8 @@
 @property(nonatomic,assign)CGPoint onpoint;//用来记录控件的初始位置（onbtn用）
 @property(nonatomic,assign)CGPoint offpoint;//用来记录控件的初始位置（offbtn用）
 @property(nonatomic,assign)CGPoint delaypoint;//用来记录控件的初始位置（delaybtn用）
-@property(nonatomic,assign)CGPoint loopstartpoint;
-@property(nonatomic,assign)CGPoint loopendpoint;
+@property(nonatomic,assign)CGPoint loopstartpoint;//用来记录控件的初始位置（loopstart用）
+@property(nonatomic,assign)CGPoint loopendpoint;//用来记录控件的初始位置（loopend用）
 
 
 
@@ -100,21 +100,22 @@
 @property(nonatomic,strong)UIPanGestureRecognizer *onPanGestureRecognizer;//添加在试图上拖动的手势（onbtn用）
 @property(nonatomic,strong)UIPanGestureRecognizer *offPanGestureRecognizer;//添加在试图上拖动的手势（offbtn用）
 @property(nonatomic,strong)UIPanGestureRecognizer *delayPanGestureRecognizer;//添加在试图上拖动的手势（delaybtn用）
-@property(nonatomic,strong)UIPanGestureRecognizer *loopstartPanGestureRecognizer;
-@property(nonatomic,strong)UIPanGestureRecognizer *loopendPanGestureRecognizer;
+@property(nonatomic,strong)UIPanGestureRecognizer *loopstartPanGestureRecognizer;//用来记录控件的初始位置（loopstart用）
+@property(nonatomic,strong)UIPanGestureRecognizer *loopendPanGestureRecognizer;//用来记录控件的初始位置（loopend用）
 
 
 #pragma mark  蓝牙那一块的所有=========
-@property(nonatomic,strong)UIView *bgview;
-@property(nonatomic,strong)UITableView *bluetable;
+@property(nonatomic,strong)UIView *bgview;//弹出蓝牙框的黑背景
+@property(nonatomic,strong)UITableView *bluetable;//蓝牙的tableview
 
 @property(nonatomic,strong)CBCentralManager *bluetoothManager;//蓝牙最主要的中心
 
 @property(nonatomic,strong)NSMutableArray *bluearray;//装载蓝牙的数组
 @property(nonatomic,strong)NSMutableArray *adarray;//装在出来rssi等额外的advertise信息的数组
 
-@property (nonatomic,strong)CBPeripheral *myPeripheral;
-@property (nonatomic,strong)CBCharacteristic *myCharacteristic;
+@property (nonatomic,strong)CBPeripheral *myPeripheral; //蓝牙的从设备
+@property (nonatomic,strong)CBCharacteristic *myCharacteristic;//蓝牙的charecteristic
+
 //myPeripheral  myCharacteristic用来传array到蓝牙
 
 
@@ -265,7 +266,6 @@
 
 //强制横屏没商量
 - (void)setNewOrientation:(BOOL)fullscreen
-
 {
     
     if (fullscreen) {
@@ -305,12 +305,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   // self.view.backgroundColor = [UIColor blueColor];
-    
-    
     [self orientationcontrol];//设置横屏
-    
-    
     
     [self createview];
     
@@ -333,7 +328,9 @@
 #pragma mark 设置背景的view==============
 -(void)setbackgroundview{
     UIImageView *mainbgimgview = [[UIImageView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    //mainbgimgview.image = [UIImage imageNamed:@"guoda"];
+    
+    mainbgimgview.image = [UIImage imageNamed:@"guoda"];
+    
     [self.view addSubview:mainbgimgview];
     [self.view sendSubviewToBack:mainbgimgview];
     
@@ -491,17 +488,6 @@
     CGPoint loopendpoint = loopend.center;
     self.loopendpoint = loopendpoint;
     
-//    UITextView *text = [[UITextView alloc]initWithFrame:CGRectMake(X, Y + margin*5 + H*5, W,200)];
-//    [self.optionview addSubview:text];
-//    text.editable = NO;//转换为不可编辑状态
-//    text.backgroundColor  = [UIColor lightGrayColor];
-//    text.text  = [NSString stringWithFormat: @" 在这里显示的是每一个模块的相应介绍，你需要把某一个模块拖到程序执行界面上再点击相应的模块就可以看到这个模块的相应介绍"];
-//    text.textColor = [UIColor blueColor];
-//    text.layer.cornerRadius = 10;
-//    text.font = [UIFont systemFontOfSize:17];
-//    self.rightinfotextview = text;
-    
-    
 }
 
 #pragma mark dragmoved方法==============
@@ -522,7 +508,7 @@
         if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
             if (CGRectContainsPoint(self.maintv.frame, self.optionstart.center)) {
                 [self createmainarray:@"systemstart" andname:@"开始"];
-                  [self.optionstart removeGestureRecognizer:panGestureRecognizer];
+                [self.optionstart removeGestureRecognizer:panGestureRecognizer];
                 [UIView animateWithDuration:0.3 animations:^{
                     self.optionstart.center = CGPointMake(self.startpoint.x, self.startpoint.y);
                 }];
@@ -685,6 +671,9 @@
                 self.loopstart.enabled = NO;//循环开始被拉到tableview里面后 关闭loopstart
                 self.loopend.enabled = YES;
                 
+//                [self.loopstart removeGestureRecognizer:self.loopstartPanGestureRecognizer];
+//                [self.loopend addGestureRecognizer:self.loopendPanGestureRecognizer];
+                
                 [UIView animateWithDuration:0.3 animations:^{
                     self.loopstart.center = CGPointMake(self.loopstartpoint.x, self.loopstartpoint.y);
                 }];}else{
@@ -718,6 +707,10 @@
                 
                 self.loopend.enabled = NO;//循环结束被拉到tableview里面后 关闭loopstart
                 self.loopstart.enabled = YES;
+                
+//                [self.loopend removeGestureRecognizer:self.loopstartPanGestureRecognizer];
+//                [self.loopstart addGestureRecognizer:self.loopendPanGestureRecognizer];
+//
                 
                 [UIView animateWithDuration:0.3 animations:^{
                     self.loopend.center = CGPointMake(self.loopendpoint.x, self.loopendpoint.y);
@@ -1106,7 +1099,7 @@
     self.collectionview = collectionview;
     
     UILabel *collectiontitlelbl = [[UILabel alloc]initWithFrame:CGRectMake(0, 10, collectionview.frame.size.width, 60)];
-    collectiontitlelbl.backgroundColor = [UIColor redColor];
+    //collectiontitlelbl.backgroundColor = [UIColor lightGrayColor];
     collectiontitlelbl.text = @"请选择你要展示的收藏程序";
     collectiontitlelbl.textAlignment = NSTextAlignmentCenter;
     collectiontitlelbl.font = [UIFont systemFontOfSize:25];
@@ -1114,10 +1107,12 @@
     
     UITableView *collectiontabl= [[UITableView alloc]initWithFrame:CGRectMake(0, collectiontitlelbl.frame.size.height +20, collectionW, collectionH - collectiontitlelbl.frame.size.height- 30) style:UITableViewStylePlain];
     [collectionview addSubview:collectiontabl];
-    collectiontabl.backgroundColor = [UIColor orangeColor];
+    //collectiontabl.backgroundColor = [UIColor orangeColor];
+    //collectiontabl.hidden = YES;
     self.collectiontable = collectiontabl;
     collectiontabl.delegate = self;
     collectiontabl.dataSource = self;
+    
     
     UIButton *collectioncancel = [[UIButton alloc]initWithFrame:CGRectMake(kenscreenheight - collectionW, collectionview.frame.size.height + collectionview.frame.origin.y +10, collectionW, 40)];
     [collectioncancel setTitle:@"返回" forState:UIControlStateNormal];
@@ -1198,12 +1193,7 @@
     }else{
         [self alert:@"蓝牙未连接" andmessage:@"请先连接蓝牙"];
         
-     
-        
     }
-    
-    
-   
     
 }
 
@@ -1237,10 +1227,7 @@
     //tv.backgroundColor =[UIColor colorWithWhite:1.0 alpha:0.7];
      tv.alpha = 0.7;
     
-
-    
     self.maintv = tv;
-    
     
     UIView *toptvview = [[UIView alloc]initWithFrame:CGRectMake(X, 5, W, 40)];
     toptvview.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.7];
@@ -1259,9 +1246,7 @@
     [self.view sendSubviewToBack:toptvlbl];
     [self.view sendSubviewToBack:toptvview];
     
-    
 
-    
 }
 
 #pragma mark tableView的动画 ====================
@@ -1280,10 +1265,7 @@
          return self.mainarray.count;
     }else if (tableView == self.collectiontable){
         
-  
-        
         NSUserDefaults *collect = [NSUserDefaults standardUserDefaults];
-        
         
         NSLog(@"collect = %@",[collect objectForKey:@"collection"]);
         
@@ -1337,6 +1319,7 @@
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cid];
         }
         cell.textLabel.text = [[collectionarray objectAtIndex:indexPath.row] objectForKey:@"title"];
+        
         
         return cell;
         
@@ -1428,16 +1411,13 @@
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 1;
 }
+
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     return self.pickerds.count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    // self.pickerstr = nil;
-    
-    self.pickerstr = [self.pickerds objectAtIndex:row];
-    NSLog(@"self.pickerstr = %@",self.pickerstr);
-    
+
     return [self.pickerds objectAtIndex:row];
 }
 
@@ -1445,7 +1425,11 @@
     return 40;
 }
 
-
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    
+    self.pickerstr = [self.pickerds objectAtIndex:row];
+    NSLog(@"pickerstr = %@",self.pickerstr);
+}
 
 #pragma mark  点击picker的按钮调用的方法=================
 -(void)pickerbtnclick{
@@ -1461,6 +1445,7 @@
     }else if ([name containsString:@"延迟"]){
         
         [self replacearray:@"迟" end:@"秒"];
+        
     }else if ([name containsString:@"循环"]){
         
         [self replacearray:@"环" end:@"次"];
@@ -1468,14 +1453,13 @@
     
 }
 
-#pragma mark 行高的方法================================
+#pragma mark tableview返回行高的方法================================
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == self.maintv) {
            return 80;
     }else{
         return 68;
     }
-
     
 }
 
@@ -1495,30 +1479,19 @@
         
         NSMutableArray *collectarray = [[collect objectForKey:@"collection"] mutableCopy];
         
-//        NSMutableArray *collectarray2 = [NSMutableArray array];
-//        collectarray2 = [collectarray mutableCopy];
-//
         self.mainarray = [[[collectarray objectAtIndex:indexPath.row] objectForKey:@"array"] mutableCopy];
         
         [self.maintv reloadData];
         [self starAnimationWithTableView:self.maintv];//开启动画
         
+//        [self.optionstart addGestureRecognizer:_PanGestureRecognizer];
+//        [self.optionend addGestureRecognizer:_stopPanGestureRecognizer];
+        
         [self.collectionbgview removeFromSuperview];
         [self.collectionview removeFromSuperview];
         [self.collectioncancel removeFromSuperview];
         
-    }
-        
-//        NSLog(@"indexpath = %ld",(long)indexPath.row);
-//
-//        [self.maintv reloadData];
-//        NSIndexPath *lastindexpath = [NSIndexPath indexPathForRow:self.mainarray.count -1 inSection:0];
-//        [self.maintv scrollToRowAtIndexPath:lastindexpath atScrollPosition:UITableViewScrollPositionTop animated:NO];//滚动到tableview的最后
-//
-//        [self starAnimationWithTableView:self.maintv];//开启动画
-        
-        
-    else {
+    }else {
         NSMutableDictionary *dict2 = [self.adarray objectAtIndex:indexPath.row];
         
         int kCBAdvDataIsConnectable = [[dict2 objectForKey:@"kCBAdvDataIsConnectable"]intValue];
@@ -1540,23 +1513,25 @@
 -(void)showinright:(NSString *)info{
     if ([info isEqualToString:@"开始"]) {
         self.rightinfotextview.text = @"这是开始模块，开始模块是一个程序最开始要运行的模块，一般一个程序还包括结束模块";
+        [self writetolog:@"这是开始模块，开始模块是一个程序最开始要运行的模块，一般一个程序还包括结束模块"];
        // [self disablebtnandtext:@"开始"];
     }else if ([info isEqualToString:@"结束"]){
         self.rightinfotextview.text = @"这是结束模块，结束模块标着程序运行马上停止，所有的功能模块都应该写在结束模块上面";
+          [self writetolog:@"这是结束模块，结束模块标着程序运行马上停止，所有的功能模块都应该写在结束模块上面"];
       //  [self disablebtnandtext:@"结束"];
     }else if ([info containsString:@"开"]){
          self.rightinfotextview.text = @"这是开灯模块，开灯模块控制蓝牙小灯的开启，默认开启一号小灯，可以在这个信息栏的上方选择其他小灯，如果程序包含一个开灯模块那么程序必须再包含一个关灯模块";
-        
+        [self writetolog:@"这是开灯模块，开灯模块控制蓝牙小灯的开启，默认开启一号小灯，可以在这个信息栏的上方选择其他小灯，如果程序包含一个开灯模块那么程序必须再包含一个关灯模块"];
      //   [self cellclickbtnaction:@"请选择你要控制的小灯" andmessage:@"\n\n\n\n"];
         
     }else if ([info containsString:@"关"]){
         self.rightinfotextview.text = @"这是关灯模块，关灯模块控制蓝牙小灯的关闭，默认关闭一号小灯，可以在这个信息栏的上方选择其他小灯，如果程序包含一个关灯模块那么程序必须再包含一个开灯模块";
-        
+        [self writetolog:@"这是关灯模块，关灯模块控制蓝牙小灯的关闭，默认关闭一号小灯，可以在这个信息栏的上方选择其他小灯，如果程序包含一个关灯模块那么程序必须再包含一个开灯模块"];
      //   [self cellclickbtnaction:@"请选择你要控制的小灯" andmessage:@"\n\n\n\n"];
         
     }else if ([info containsString:@"延迟"]){
-        self.rightinfotextview.text = @"这是延迟模块，延迟模块可以延迟程序的执行，默认延迟一秒钟，可以在这个信息栏的上方更改延迟时间。";
-      
+        self.rightinfotextview.text = @"这是延迟模块，延迟模块可以延迟程序的执行，默认延迟一秒钟，可以在这个信息栏的上方更改延迟时间";
+        [self writetolog:@"这是延迟模块，延迟模块可以延迟程序的执行，默认延迟一秒钟，可以在这个信息栏的上方更改延迟时间"];
       //  [self cellclickbtnaction:@"请选择你要延迟的时间" andmessage:@"\n\n\n\n"];
         
     }
@@ -1566,8 +1541,8 @@
 #pragma mark   替换mainarray================
 -(void)replacearray :(NSString *)start end:(NSString *)end{
     
-    NSLog(@"xxxxx");
-    NSLog(@"self.index = %ld",(long)self.index);
+//    NSLog(@"xxxxx");
+//    NSLog(@"self.index = %ld",(long)self.index);
     
     NSDictionary *dict = self.mainarray[self.index];
     NSString *name = [dict objectForKey:@"name"];
@@ -1726,6 +1701,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     NSString *time = [formatter stringFromDate:nowdate];
     
     self.infotextview.text = [NSString stringWithFormat:@"%@\r\n%@    %@" ,self.infotextview.text,time,info];
+    
+    [self.infotextview scrollRangeToVisible:NSMakeRange(self.infotextview.text.length, 1)];//infotextview在有新的内容的时候往下滑
 }
 
 
@@ -1839,9 +1816,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     //外围设备开始寻找服务
     [peripheral discoverServices:@[[CBUUID UUIDWithString:kServiceUUID]]];
     
-    
-
-    
 }
 
 //连接失败
@@ -1904,6 +1878,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     self.bluearray = nil;
     self.adarray = nil;
     
+    [self writetolog:@"蓝牙已连接"];
+    
     [self.blueprogress hideAnimated:YES];//关闭第二段动画
     
     if (error) {
@@ -1936,6 +1912,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     NSLog(@"已经断开蓝牙");
     
      self.righttoplabel.text= @"蓝牙已断开 正在努力重连中。。。。";
+    
+    [self writetolog: @"蓝牙已断开 正在努力重连中。。。。"];
     
     [self.bluetoothManager connectPeripheral:peripheral options:nil];
     //尝试重新连接
